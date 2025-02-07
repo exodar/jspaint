@@ -112,7 +112,8 @@ function handle_data_loss() {
 class LocalSession {
 	constructor(session_id) {
 		this.id = session_id;
-		const ls_key = `image#${session_id}`;
+		const date = new Date();
+		const ls_key = `image#${session_id}#${date.toISOString()}`;
 		log(`Local storage key: ${ls_key}`);
 		// save image to storage
 		this.save_image_to_storage_immediately = () => {
